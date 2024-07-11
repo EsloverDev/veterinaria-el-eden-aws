@@ -40,7 +40,9 @@ def add_pet(mascota, propietario, tipo_mascota, raza, sexo, edad):
         return False
         
 def consult_pet(mascota, propietario):
+# Creo una sentencia con los argumentos que se recibieron para encontrar la mascota que se está consultando
     instruction_sql = "SELECT * FROM paciente WHERE nombre_mascota = '" + mascota + "' AND nombre_propietario = '" + propietario + "';"
+# Se llama el método conectionSQL() que retorna la conexión con la base de datos, y esto se guarda en la variable conexion
     conexion = conectionSQL()
     try:
         cursor = conexion.cursor()
