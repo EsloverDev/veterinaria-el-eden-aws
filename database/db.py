@@ -38,7 +38,8 @@ def add_pet(mascota, propietario, tipo_mascota, raza, sexo, edad):
         print("Error creating a pet")
         print(err)
         return False
-        
+
+# Esta función consulta en la base de datos la existencia de una mascota y tiene como parámetro el nombre de la mascota y el nombre del propietario
 def consult_pet(mascota, propietario):
 # Creo una sentencia con los argumentos que se recibieron para encontrar la mascota que se está consultando
     instruction_sql = "SELECT * FROM paciente WHERE nombre_mascota = '" + mascota + "' AND nombre_propietario = '" + propietario + "';"
@@ -48,6 +49,7 @@ def consult_pet(mascota, propietario):
         cursor = conexion.cursor()
         cursor.execute(instruction_sql)
         result_data = cursor.fetchall()
+# aquí se retorna el registro en caso de ser encontrado en la base de datos        
         return result_data
     except Exception as err:
         print("Error: ", err)

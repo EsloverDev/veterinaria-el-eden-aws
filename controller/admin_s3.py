@@ -6,9 +6,9 @@ bucket_name = "fotos-de-mascotas"
 # Esta funcion me ayuda a conectarme con S3 a través de SDK boto3
 def connection_s3():
     try:
-# En esta línea creo una sesión en la cuál debo pasar como argumento el ACCESS_KEY y el SECRET_KEY que fueron unas credenciales que se crearon a través del servicio de IAM
+# En esta línea creo una sesión en la cuál debo pasar como argumento el ACCESS_KEY y el SECRET_KEY que fueron unas credenciales que se crearon a través del servicio de IAM y que están guardadas en el archivo keys.py; esta sesión me sirve para conectarme con aws y queda almacenada en la variable session_aws
         session_aws = boto3.session.Session(ACCESS_KEY, SECRET_KEY)
-# Aquí le indico que puntualmente me quiero conectar con el servicio de s3
+# Aquí le indico que puntualmente me quiero conectar con el servicio de s3 a través del método resource que es propio de la conexión con aws
         s3_resource = session_aws.resource('s3')
 # Aquí retorno la conexión exitosa con s3
         return s3_resource
@@ -54,7 +54,7 @@ def consult_file(s3_resource, mascota):
         objetos_sin_ruta = lista_fotos_s3.split("/")
 # Ahora tomo el último elemento de objetos_sin_ruta, que sería nombreFoto.jpg y por medio de split(".")[0] obtengo nombreFoto sin la extensión; ahora nombre_foto es un array con todos los nombres de las fotos que hay en el bucket
         nombre_foto = objetos_sin_ruta[len(objetos_sin_ruta)-1].split(".")[0]
-# Ahora valido si el argumento que se pasó en mascota existe en la lista nombre_foto
+# Ahora valido si el argumento que se pasó en mascota es igual al que está almacenado en la variable nombre_foto en cada una de las iteraciones de la lista
         if nombre_foto == mascota:
 # Aquí se retorna la ruta en forma = images/nombreFoto.jpg cuando el nombre de la foto coincida con el nombre de la mascota
             return lista_fotos_s3
