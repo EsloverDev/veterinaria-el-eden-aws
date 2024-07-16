@@ -9,23 +9,26 @@
 </head>
 
 <body>
-    <div>
-        <h1>Mascotas registradas</h1>
-        <label>Nombre de la mascota</label>
-        <input type="text" name="mascota" id="mascota"/>
+    <h1>Mascotas registradas</h1>
+    <form>
+        <div class="form-group">
+            <label>Nombre de la mascota</label>
+            <input type="text" name="mascota" id="mascota"/>
+        </div>
+        <div class="form-group">
+            <label>Nombre del dueño</label>
+            <input type="text" name="propietario" id="propietario"/>
+        </div>
         <br />
+        <div class="form-group">
+            <img id="img-pet" src=""></img>
+        </div>
         <br />
-        <label>Nombre del dueño</label>
-        <input type="text" name="propietario" id="propietario"/>
-        <br />
-        <br />
-        <img id="img-pet" src=""></img>
-        <br />
-        <textarea id="txt-data"></textarea>
-        <br />
-        <br />
+        <div class="form-group">
+            <textarea id="txt-data" rows="4" readonly></textarea>
+        </div>
         <button onClick="consult_pet()">Consultar</button>
-    </div>
+    </form>
 </body>
 
 </html>

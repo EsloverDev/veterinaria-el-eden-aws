@@ -3,54 +3,58 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Página de registro</title>
+    <title>Registrar Mascotas</title>
     <link rel="stylesheet" href="../static/css/styleRegister.css" type="text/css" />
     <script src="../static/js/register.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
-    <h1>Registro de pacientes</h1>
+    <h1>Datos de registro</h1>
     <form action="/register_user" method="post" enctype="multipart/form-data">
-        <label>Nombre de la mascota</label>
-        <input type="text" name="mascota" />
-        <br />
-        <br />
-        <label>Nombre del dueño</label>
-        <input type="text" name="propietario" />
-        <br />
-        <br />
-        <label>Tipo de mascota</label>
-        <select name="tipo_mascota" id="tipo_mascota">
-            <option value="seleccionar">seleccionar</option>
-            <option value="perro">Perro</option>
-            <option value="gato">Gato</option>
-            <option value="pajaro">Pájaro</option>
-        </select>
-        <br />
-        <br />
-        <label>Raza</label>
-        <input type="text" name="raza" />
-        <br />
-        <br />
-        <label>Sexo</label>
-        <label for="sexo-macho">
-            <input type="radio" id="sexo-macho" name="sexo" value="macho" required />
-            Macho
-        </label>
-        <label for="sexo-hembra">
-            <input type="radio" id="sexo-hembra" name="sexo" value="hembra" required />
-            Hembra
-        </label>
-        <br />
-        <br />
-        <label>Edad</label>
-        <input type="number" name="edad" />
-        <br />
-        <br />
-        <label>Foto</label>
-        <input type="file" name="foto"/>
-        <br />
-        <br />
+        <div class="form-group">
+            <label>Nombre de la mascota</label>
+            <input type="text" name="mascota" />
+        </div>
+        <div class="form-group">
+            <label>Nombre del propietario</label>
+            <input type="text" name="propietario" />
+        </div>
+        <div class="form-group">
+            <label>Tipo de mascota</label>
+            <select name="tipo_mascota" id="tipo_mascota">
+                <option value="seleccione">seleccione...</option>
+                <option value="perro">Perro</option>
+                <option value="gato">Gato</option>
+                <option value="pajaro">Pájaro</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Raza</label>
+            <input type="text" name="raza" />
+        </div>
+        <div class="form-group">
+            <label>Sexo</label>
+        </div>
+        <div class="radio-group">
+            <div>
+                <label for="sexo-macho">
+                    <input type="radio" id="sexo-macho" name="sexo" value="macho" required />
+                    Macho
+                </label>
+                <label for="sexo-hembra">
+                    <input type="radio" id="sexo-hembra" name="sexo" value="hembra" required />
+                    Hembra
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Edad</label>
+            <input type="number" name="edad" />
+        </div>
+        <div class="form-group">
+            <label>Foto</label>
+            <input type="file" name="foto"/>
+        </div>
         <button onClick="registerUser()">Registrarse</button>
     </form>
 </body>
