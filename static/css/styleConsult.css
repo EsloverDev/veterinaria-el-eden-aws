@@ -5,7 +5,6 @@ h1 {
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
     background: url('https://clipart-library.com/images/kcMnRqBoi.gif'), linear-gradient(to left, #12c2e9, #c471ed, #f64f59);
     text-align: center;
     color: #B9FFB7;
@@ -44,7 +43,7 @@ form {
     max-width: 400px;
     padding: 20px;
     margin: 0 auto;
-    
+    margin-bottom: 50px;
 }
 
 .form-group {
@@ -69,6 +68,15 @@ form {
     color: #33658A;
 }
 
+.form-group img {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #33658A;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
 textarea {
     height: 150px;
     padding: 10px;
@@ -76,10 +84,4 @@ textarea {
     border-radius: 10px;
     font-size: 16px;
     color: #33658A;
-}
-
-img {
-    width: 200px;
-    border-radius: 50%;
-    border: 2px solid #33658A;
 }

@@ -18,6 +18,6 @@ def register_user():
     return func_register_user()
 
 # Cuando se solicita el recurso /consult_pet a través del método HTTP post se ejecuta esta función que retorna lo que retorna la función func_consult_pet()
-@app.route("/consult_pet", methods=["post"])
+@app.route("/consult_pet", methods=["POST"])
 def consult_pet():
     return func_consult_pet()

@@ -6,4 +6,4 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-CMD ["sudo", "python3", "server.py"]
+CMD ["python3", "server.py"]

@@ -11,7 +11,7 @@ function consult_pet() {
 // A través del método fetch se solicita el recurso /consult_pet del archivo route.py el cuál tiene como parámetros la ruta y la solicitud; la solicitud contiene un method, un headers y un body y esa solicitud se envía al server cin la ruta /consult_pet
     fetch("/consult_pet", {
 //Aquí se indica el método, si es get, post, put o delete
-        "method": "post",
+        "method": "POST",
 //Aquí se le indica el tipo de contenido, en este caso un json para que el servidor lo interprete como un json
         "headers": {"Content-Type": "application/json"},
 //El body contiene los datos que vienen en el objeto obj_pet que declaré anteriormente
